@@ -1,0 +1,24 @@
+<p>cadastro-usuario works!</p>
+
+<form id="cadastro-usuario" #cadastroForm (ngSubmit)="adicionarUsuario()">
+    <div class="col-6">
+        <label>Id</label>
+        <input id="id" name="id" [(ngModel)]="usuario.id" class="form-control"  type="text">
+    </div>
+    <div class="col-6">
+        <label>Nome</label>
+        <input id="nome" name="nome" [(ngModel)]="usuario.nome" class="form-control"  type="text">
+    </div>
+    <div class="col-6">
+        <label>Idade</label>
+        <input id="idade" name="idade" [(ngModel)]="usuario.idade" class="form-control"  type="text">
+    </div>
+    <div class="col-6">
+        <label>Perfil</label>
+        <input id="perfil" name="perfil" [(ngModel)]="usuario.perfil" class="form-control"  type="text">
+    </div>
+    <br>
+    <div class="col-6">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </div>
+</form>
