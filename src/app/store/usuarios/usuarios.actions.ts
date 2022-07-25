@@ -91,7 +91,7 @@ export const UpdateUsuarioFail = createAction(
 
 export const DeleteUsuario = createAction(
   usuariosTypeAction.DELETE_USUARIO,
-  props<{ id: number }>()
+  props<{ payload: number }>()
 );
 
 export const DeleteUsuarioSuccess = createAction(

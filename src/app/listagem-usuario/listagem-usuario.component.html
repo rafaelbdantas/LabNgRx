@@ -16,14 +16,21 @@
       <td>{{ row.nome }}</td>
       <td>{{ row.idade }}</td>
       <td>{{ row.perfil }}</td>
-      <td>
+      <td class="group-button-table">
         <button
           class="btn btn-primary"
           data-toggle="modal"
-          data-target="#exampleModal"
+          data-target="#editModal"
           (click)="editar(row.id)"
         >
           Editar
+        </button>
+        
+        <button
+          class="btn btn-danger"
+          (click)="excluir(row.id)"
+        >
+          Excluir
         </button>
       </td>
     </tr>
@@ -31,16 +38,16 @@
 </table>
 
 <!-- Modal -->
-<!-- <div
+<div
   class="modal fade"
-  id="exampleModal"
+  id="editModal"
   tabindex="-1"
   role="dialog"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" *ngIf="usuario$ | async as usuario">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button
@@ -52,13 +59,56 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">...</div>
+      <div class="modal-body" >
+        <form id="editar-usuario" #editForm>
+          <div class="col-6">
+            <label>Id</label>
+            <input
+              id="id"
+              name="id"
+              [(ngModel)]="usuario.id"
+              class="form-control"
+              type="text"
+            />
+          </div>
+          <div class="col-6">
+            <label>Nome</label>
+            <input
+              id="nome"
+              name="nome"
+              [(ngModel)]="usuario.nome"
+              class="form-control"
+              type="text"
+            />
+          </div>
+          <div class="col-6">
+            <label>Idade</label>
+            <input
+              id="idade"
+              name="idade"
+              [(ngModel)]="usuario.idade"
+              class="form-control"
+              type="text"
+            />
+          </div>
+          <div class="col-6">
+            <label>Perfil</label>
+            <input
+              id="perfil"
+              name="perfil"
+              [(ngModel)]="usuario.perfil"
+              class="form-control"
+              type="text"
+            />
+          </div>
+        </form>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary" (click)="editarUsuario(usuario)" >Save changes</button>
       </div>
     </div>
   </div>
-</div> -->
+</div>

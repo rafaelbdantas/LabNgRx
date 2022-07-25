@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import { ListaUsuarioAdministradorComponent } from './lista-usuario-administrador/lista-usuario-administrador.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     ListagemUsuarioComponent,
     MainComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    ListaUsuarioAdministradorComponent
   ],
   imports: [
     BrowserModule,

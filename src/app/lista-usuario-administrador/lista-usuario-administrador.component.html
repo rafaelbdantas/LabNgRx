@@ -1,0 +1,20 @@
+<p>lista-usuario-administrador works!</p>
+
+<table class="table">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nome</td>
+        <td>Idade</td>
+        <td>Perfil</td> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of usuarios$ | async">
+        <td>{{ row.id }}</td>
+        <td>{{ row.nome }}</td>
+        <td>{{ row.idade }}</td>
+        <td>{{ row.perfil }}</td>
+      </tr>
+    </tbody>
+  </table>

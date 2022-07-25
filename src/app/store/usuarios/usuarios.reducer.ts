@@ -97,3 +97,15 @@ export const getUsuarioErro = createSelector(
   getUsuariosFeatureState,
   (state: UsuarioState) => state.error
 );
+
+export const obterUsuario = (props: {id: number}) =>   
+  createSelector(     
+    getUsuariosFeatureState,
+    (state: UsuarioState) => <UsuarioModel>{...state.usuarios.find(u => u.id === props.id)}
+  );
+
+
+  export const getUsuariosAdmnistrador = createSelector(
+    getUsuariosFeatureState,
+    (state: UsuarioState) => state.usuarios.filter(u => u.perfil?.toLowerCase() === 'administrador')
+  );
